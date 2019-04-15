@@ -1,10 +1,10 @@
-import 'package:fms_app/src/models/mc.dart';
+import 'package:fms_app/src/models/rooster.dart';
 
 class Battle{
 
-  List<Mc> mcs;
+  List<Rooster> roosters;
   int duration;
-  Mc winner;
+  Rooster winner;
   String location;
   String videoUrl;
 
