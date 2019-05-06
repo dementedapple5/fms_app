@@ -4,9 +4,11 @@ import 'package:scoped_model/scoped_model.dart';
 
 
 class RoosterModel extends Model {
+
   RoosterModel (this._repository);
 
   final RoosterRepository _repository;
+
 
   bool _isLoading = false;
   List<Rooster> _roosters;

@@ -17,17 +17,14 @@ class DatabaseClient{
     id INTEGER PRIMARY KEY,
     email TEXT NOT NULL,
     password TEXT NOT NULL,
-    name TEXT,
-    nick_name TEXT NOT NULL,
-    age INTEGER,
-    resume TEXT,
+    username TEXT NOT NULL,
     avatar TEXT
   );
   """;
 
   final _createCountryTableSQL = """
   CREATE TABLE country(
-    id INTEGER PRIMARY KEY,
+    code TEXT PRIMARY KEY,
     name TEXT NOT NULL
   );
   """;
@@ -49,10 +46,11 @@ class DatabaseClient{
   CREATE TABLE battle(
     id INTEGER PRIMARY KEY,
     title TEXT,
-    rooster_one_id INTEGER,
-    rooster_two_id INTEGER,
+    rooster1_id INTEGER,
+    rooster2_id INTEGER,
     winner_id INTEGER,
     date TEXT,
+    thumbnail_path TEXT;
     location TEXT,
     video_path TEXT,
     tournament_id INTEGER NOT NULL,
@@ -68,6 +66,7 @@ class DatabaseClient{
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     description TEXT,
+    poster_path TEXT,
     country_id INTEGER,
     FOREIGN KEY (country_id) REFERENCES country(id)
   );
@@ -108,7 +107,7 @@ class DatabaseClient{
   Future create() async {
     final documentsDirectory = await getApplicationDocumentsDirectory();
     String path = join(documentsDirectory.path, "jobbag.db");
-    //await deleteDatabase(path);
+    await deleteDatabase(path);
     var theDb = await openDatabase(path, version: 1, onCreate: _onCreate, readOnly: false);
     return theDb;
   }
