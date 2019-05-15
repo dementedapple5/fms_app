@@ -50,13 +50,13 @@ class DatabaseClient{
     rooster2_id INTEGER,
     winner_id INTEGER,
     date TEXT,
-    thumbnail_path TEXT;
+    thumbnail_path TEXT,
     location TEXT,
     video_path TEXT,
     tournament_id INTEGER NOT NULL,
     FOREIGN KEY (tournament_id) REFERENCES tournament(id),
-    FOREIGN KEY (rooster_one_id) REFERENCES rooster(id),
-    FOREIGN KEY (rooster_two_id) REFERENCES rooster(id),
+    FOREIGN KEY (rooster1_id) REFERENCES rooster(id),
+    FOREIGN KEY (rooster2_id) REFERENCES rooster(id),
     FOREIGN KEY (winner_id) REFERENCES rooster(id)
   );
   """;
