@@ -3,13 +3,9 @@ import 'package:fms_app/src/utils/db_client.dart';
 import 'package:sqflite/sqlite_api.dart';
 
 class CountryRepository {
-  
+
   Future<Country> fetchCountryById(int countryId) async {
-    DatabaseClient dbClient = DatabaseClient();
-    Database db = await dbClient.db;
-    Country country;
-    country = await db.query('country', where: 'id = ?', whereArgs: [countryId]).then((result) => Country.fromMap(result[0]));
-    return country;
+
   }
 
   void insertCountry(Country country) async {

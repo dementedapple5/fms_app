@@ -34,7 +34,15 @@ class MyApp extends StatelessWidget {
       title: 'Rooster Edge',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'ProductSans'
+        fontFamily: 'ProductSans',
+        textTheme: TextTheme(
+          subtitle: TextStyle(fontWeight: FontWeight.w700, fontSize: 26.0),
+          title: TextStyle(fontWeight: FontWeight.w700, fontSize: 30.0),
+          headline: TextStyle(fontWeight: FontWeight.w700, fontSize: 22.0),
+          subhead: TextStyle(fontWeight: FontWeight.w600, fontSize: 20.0),
+          body1: TextStyle(fontSize: 16.0, color: Colors.grey),
+          body2: TextStyle(fontSize: 16.0),
+        )
       ),
       home: MainPage(title: 'Rooster Edge'),
     );
