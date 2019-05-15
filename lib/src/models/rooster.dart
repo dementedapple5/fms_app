@@ -31,7 +31,7 @@ class Rooster {
       'age' : age,
       'resume' : resume,
       'avatar' : avatar,
-      'country_id' : country.id
+      'country_id' : country.code
     };
 
     if (id != null) {

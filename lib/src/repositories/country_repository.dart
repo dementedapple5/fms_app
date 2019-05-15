@@ -8,10 +8,11 @@ class CountryRepository {
 
   }
 
-  void insertCountry(Country country) async {
+  Future<int> insertCountry(Country country) async {
     DatabaseClient dbClient = DatabaseClient();
     Database db = await dbClient.db;
-    db.insert('country', country.toMap());
+    int id = await db.insert('country', country.toMap());
+    return id;
   }
 
   Future<List<Country>> fetchCountries() async {

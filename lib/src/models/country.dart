@@ -1,30 +1,26 @@
 class Country {
 
   String name;
-  int id;
+  String code;
 
-
-  Country(this.name, {this.id});
+  Country(this.name, this.code);
 
   Country.fromMap(Map<String, dynamic> map) {
     name = map['name'];
-    id = map['id'];
+    code = map['code'];
   }
 
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
-      'name' : name
+      'name' : name,
+      'code' : code
     };
-    if (id != null) {
-      map['id'] = id;
-    }
-
     return map;
   }
 
   @override
   String toString() {
-    return 'Country{name: $name, id: $id}';
+    return 'Country{name: $name, code: $code}';
   }
 
 

@@ -7,6 +7,8 @@ class Battle{
   Rooster winner;
   String location;
   String videoUrl;
+  DateTime date;
+  String thumbnailUrl;
 
 
 }
