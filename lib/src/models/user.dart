@@ -1,16 +1,29 @@
-import 'package:fms_app/src/models/rooster.dart';
-import 'package:fms_app/src/models/tournament.dart';
+import 'package:fms_app/src/models/career.dart';
+import 'package:fms_app/src/models/school.dart';
 
-class User{
+class User {
+  String name, surname, email, bio, profileImg;
+  int degree;
+  DateTime createdAt;
+  School school;
+  Career career;
 
-  String email;
-  String password;
-  List<Tournament> followingTournaments;
-  List<Rooster> followingRooster;
-  String name;
-  String nickName;
-  int age; String resume;
-  String avatar;
+  User(this.name, this.surname, this.email, this.bio, this.profileImg,
+      this.degree, this.createdAt, this.school, this.career);
+
+
+  User.fromJson(Map json) {
+    this.name = json['name'];
+    this.surname = json['surname'];
+    this.email = json['email'];
+    this.bio = json['bio'];
+    this.profileImg = json['profile_img'];
+    this.degree = json['degree'];
+    this.createdAt = json['created_at'];
+  }
+
+
+
 
 
 }
